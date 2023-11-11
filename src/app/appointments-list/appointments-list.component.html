@@ -1,10 +1,21 @@
-<div>
+<div class="container">
+    <h2>Create a new appointment</h2>
     <input [(ngModel)]="newAppointment.title" type="text" placeholder="Appoitment description">
     <input [(ngModel)]="newAppointment.date" type="date" placeholder="Appoitment date">
-    <button>Add</button>
+    <button (click)="addAppointment()">Add</button>
 </div>
 
-<pre>
-    {{newAppointment | json}} 
-</pre>
-   
+<div class="container">
+    <h2>appointments</h2>
+    <!-- for loop new sintaxe -->
+    @for(appointment of appointments();track $index) {
+    <div class="d-flex"  style="align-items: center;">
+        <div>{{appointment.title}} {{appointment.date | date:'dd MM YYYY'}}</div>
+        <button class="button-delete" style="margin-left: 1rem;" (click)="deleteAppointment(appointment)">Delete</button>
+    </div>
+    }
+    @empty {
+    <!-- new @empty sintaxe -->
+    <div>No appointments</div>
+    }
+</div>

@@ -12,5 +12,12 @@ npx -p @angular/cli@17 ng new --directory .
 4) ng g c component-name 
 5) ng g i models/appointment
 6) import forms module
-
-
+* src\app\appointments-list\appointments-list.component.ts
+7) git push origin  develop -f
+8) signal array
+* src\app\appointments-list\appointments-list.component.ts
+9) for loop new sintaxe
+* src\app\appointments-list\appointments-list.component.ts
+10) new @empty sintaxe
+* src\app\appointments-list\appointments-list.component.ts
+11) First project finish
