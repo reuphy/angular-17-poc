@@ -10,4 +10,7 @@ npx -p @angular/cli@17 ng version
 3) create a new project inside your own directory
 npx -p @angular/cli@17 ng new --directory .
 4) ng g c component-name 
+5) ng g i models/appointment
+6) import forms module
+
 
