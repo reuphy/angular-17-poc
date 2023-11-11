@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './appointments-list.component.css'
 })
 export class AppointmentsListComponent {
-
+  test = 'appointments-list works!'
 }
