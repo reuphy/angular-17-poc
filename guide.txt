@@ -1,0 +1,13 @@
+1) fatal: unable to access 'https://github.com/reuphy/angular-17-poc.git/': The requested URL returned error: 403
+ https://www.a2hosting.com/kb/developer-corner/version-control-systems1/403-forbidden-error-message-when-you-try-to-push-to-a-github-repository/
+* git remote set-url origin "https://github-username@github.com/github-username/github-repository-name.git"
+* git remote set-url origin "https://reuphy@github.com/reuphy/angular-17-poc.git"
+
+2) start with new angular 17 project 
+https://www.youtube.com/watch?v=GhNcPbm8w0k (04m42)
+* use npx to not break if you have version < 17 also installed
+npx -p @angular/cli@17 ng version 
+3) create a new project inside your own directory
+npx -p @angular/cli@17 ng new --directory .
+4) ng g c component-name
+
