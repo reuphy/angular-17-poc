@@ -21,3 +21,8 @@ npx -p @angular/cli@17 ng new --directory .
 10) new @empty sintaxe
 * src\app\appointments-list\appointments-list.component.ts
 11) First project finish
+12) reservations-app folder created
+13) models, form list, service files started
+14) Can't bind to 'routerLink' with angular 17
+* src\app\app.component.ts
+

@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { AppointmentsListComponent } from './appointments-list/appointments-list.component';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { AppointmentsListComponent } from './approintments-app/appointments-list/appointments-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, AppointmentsListComponent],
+  // Can't bind to 'routerLink' with angular 17
+  imports: [CommonModule, RouterOutlet, AppointmentsListComponent, RouterModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
