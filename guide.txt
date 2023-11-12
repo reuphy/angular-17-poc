@@ -25,4 +25,10 @@ npx -p @angular/cli@17 ng new --directory .
 13) models, form list, service files started
 14) Can't bind to 'routerLink' with angular 17
 * src\app\app.component.ts
-
+15) forms group + validations 
+16) disable button 
+17) @if syntax plus form validation message
+* src\app\reservations-app\reservation-form\reservation-form.component.html
+18) https://jacobnarayan.com/blogs/how-to-create-a-custom-validator-for-an-angular-reactive-form
+19) { <p>Room number must be greater than 0</p>}
+20) 49 edit component

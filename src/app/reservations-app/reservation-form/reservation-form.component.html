@@ -1,1 +1,59 @@
-<p>reservation-form works!</p>
+<div style="margin-top: 2rem;"></div>
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>
+            Check in date:
+        </label>
+        <input type="date" formControlName="checkInDate">
+        <!-- @if syntax plus form validation message -->
+        @if(checkValid('checkInDate') ) {
+        <p>Check in date is required</p>
+        }
+    </div>
+
+
+    <div>
+        <label>
+            Check out date:
+        </label>
+        <input type="date" formControlName="checkOutDate">
+        @if(checkValid('checkOutDate') ) {
+        <p>Check out date is required</p>
+        }
+    </div>
+
+    <div>
+        <label>
+            Guest name:
+        </label>
+        <input type="text" formControlName="guestName">
+        @if(checkValid('guestName') ) {
+        <p>Guest name is required</p>
+        }
+    </div>
+
+    <div>
+        <label>
+            Email:
+        </label>
+        <input type="email" formControlName="guestEmail">
+        @if(checkValid('guestEmail') ) {
+        <p>Guest email is required</p>
+        }
+    </div>
+
+    <div>
+        <label>
+            room number :
+        </label>
+        <input type="number" formControlName="roomNumber">
+        @if(checkrequired('roomNumber')) {
+        <p>Room number is required</p>
+        }
+        @if(checkCustomValidation('roomNumber','notGreaterThanZero')) {
+        <p>Room number must be greater than 0</p>
+        }
+    </div>
+
+    <button [disabled]="!reservationForm.valid" type="submit">Submit</button>
+</form>

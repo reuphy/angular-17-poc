@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 export class AppointmentsListComponent {
   newAppointment:Appointment = {id: 0, title: '', date: null};
   // signal array
-  appointments = signal<Appointment[] >([])
+  appointments = signal<Appointment[]>([])
 
   addAppointment() {
     if (this.newAppointment.title.trim().length === 0 || this.newAppointment.date === null) return;

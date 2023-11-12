@@ -1,0 +1,54 @@
+/* reservation-list.component.css */
+.container {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #e9ecef;
+}
+
+.no-reservations {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* reservation-list.component.css */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+button.delete:hover {
+  background-color: #c82333;
+}
+
+button.edit {
+  margin-left: 1rem;
+  background-color: #007bff;
+  color: #fff;
+}
+
+button.edit:hover {
+  background-color: #0069d9;
+}
