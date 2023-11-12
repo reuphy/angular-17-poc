@@ -3,15 +3,7 @@ import { Component, Inject, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { Reservation } from '../models/reservation';
-
-// Custom validator
-function greaterThanZero(control: AbstractControl) {
-  const value = control.value;
-  if (value <= 0) {
-    return { notGreaterThanZero: true };
-  }
-  return null;
-}
+import { greaterThanZero } from '../../helpers/validators';
 
 @Component({
   selector: 'app-reservation-form',
@@ -35,12 +27,13 @@ export class ReservationFormComponent {
     ]),
     roomNumber: new FormControl('', [Validators.required, greaterThanZero])
   });
-
+ 
   onSubmit() {
-    if (this.reservationForm.valid) {
-      this.reservationService.addReservation(this.reservationForm.value as unknown as Reservation) 
-      this.reservationForm.reset();
-    }
+    if (this.reservationForm.valid) return;
+
+    this.reservationService.addReservation(this.reservationForm.value as unknown as Reservation)
+    this.reservationForm.reset();
+
   }
 
   checkrequired(controlName: keyof typeof this.reservationForm.controls) {
