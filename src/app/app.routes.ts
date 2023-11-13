@@ -3,6 +3,7 @@ import { AppointmentsListComponent } from './approintments-app/appointments-list
 import { ReservationListComponent } from './reservations-app/reservation-list/reservation-list.component';
 import { ReservationHomeComponent } from './reservations-app/reservation-home/reservation-home.component';
 import { ReservationFormComponent } from './reservations-app/reservation-form/reservation-form.component';
+import { ProductListComponent } from './product-app/product-list/product-list.component';
 
 export const routes: Routes = [
     {
@@ -29,6 +30,10 @@ export const routes: Routes = [
     {
         path: 'reservation/edit/:id',
         component: ReservationFormComponent
+    },
+    {
+        path: 'products',
+        component: ProductListComponent
     }
     // {
     //     path: '**',
