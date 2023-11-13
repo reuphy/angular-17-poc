@@ -3,6 +3,7 @@ import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReservationService } from '../services/reservation.service';
 import { Router, RouterModule } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-reservation-list',
@@ -14,16 +15,16 @@ import { Router, RouterModule } from '@angular/router';
 export class ReservationListComponent {
   reservationService = inject(ReservationService)
   router = inject(Router)
-  reservations = signal<Reservation[]>(
-    this.reservationService.getReservations()
+  reservations = toSignal(
+    this.reservationService.getReservations() 
   )
 
-  deleteReservation(Reservation: Reservation) {
-    this.reservationService.deleteReservation(+Reservation.id);
+  deleteReservation(reservation: Reservation) {
+    this.reservationService.deleteReservation(+reservation.id);
   } 
   
-  editReservation(Reservation: Reservation) {
-    // this.router.navigate(['/reservations', Reservation.id]);
-    this.router.navigate(['/reservation/new']);
+  editReservation(reservation: Reservation) {
+     this.router.navigate(['/reservation/edit/', reservation.id]);
+    // this.router.navigate(['/reservation/new']);
   } 
 }

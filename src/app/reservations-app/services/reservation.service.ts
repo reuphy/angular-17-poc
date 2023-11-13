@@ -1,6 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Reservation } from '../models/reservation';
+import { delay, of, map, catchError, startWith, Observable } from 'rxjs';
+export interface Error {
+  message: string;
+  status: number;
+}
 
+export interface HttpRequestState<T> {
+  isLoading: boolean;
+  value?: T;
+  error?: Error
+}
+export interface FetchTodoResponse<T> {
+  message: string;
+  taksList: T;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -27,17 +41,22 @@ export class ReservationService {
     }
   ];
 
-  getReservations() {
-    return this.reservations;
+  getReservations(): Observable<HttpRequestState<Reservation[]>> {
+    return of(this.reservations).pipe(
+      delay(1000),
+      map((value) => ({ isLoading: false, value })),
+      catchError(error => of({ isLoading: false, error })),
+      startWith({ isLoading: true })
+    )
   }
+
   getReservation(id: number) {
     return this.reservations.find(reservation => +reservation.id === id);
   }
 
   addReservation(reservation: Reservation) {
-    reservation.id = (this.reservations.length + 1).toString();
+    reservation.id = Date.now().toString();
     this.reservations.push(reservation);
-    console.log(this.reservations);
   }
 
   deleteReservation(id: number) {

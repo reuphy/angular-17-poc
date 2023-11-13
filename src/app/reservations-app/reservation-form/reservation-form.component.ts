@@ -1,9 +1,10 @@
 import { ReservationService } from './../services/reservation.service';
-import { Component, Inject, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, Input, OnInit, inject } from '@angular/core';
+import { CommonModule, formatDate } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { Reservation } from '../models/reservation';
-import { greaterThanZero } from '../../helpers/validators';
+import { greaterThanZero } from '../helpers/validators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservation-form',
@@ -12,10 +13,26 @@ import { greaterThanZero } from '../../helpers/validators';
   templateUrl: './reservation-form.component.html',
   styleUrl: './reservation-form.component.css'
 })
-export class ReservationFormComponent {
-
-  fb = inject(FormBuilder)
+export class ReservationFormComponent implements OnInit {
+  @Input() id = '';
   reservationService = inject(ReservationService)
+  fb = inject(FormBuilder)
+  router = inject(Router)
+  ngOnInit() {
+    if (this.id) {
+      const reservation = this.reservationService.getReservation(+this.id) as Reservation;
+      const { roomNumber, checkInDate, checkOutDate, guestEmail, guestName } = reservation;
+
+      if (reservation)
+        this.reservationForm.patchValue({
+          checkOutDate: formatDate(checkOutDate, 'yyyy-MM-dd', 'en'),
+          guestName,
+          guestEmail,
+          roomNumber: roomNumber + '',
+          checkInDate: formatDate(checkInDate, 'yyyy-MM-dd', 'en')
+        });
+    }
+  }
 
   reservationForm = this.fb.group({
     checkInDate: new FormControl('', [Validators.required]),
@@ -27,16 +44,20 @@ export class ReservationFormComponent {
     ]),
     roomNumber: new FormControl('', [Validators.required, greaterThanZero])
   });
- 
+
   onSubmit() {
-    if (this.reservationForm.valid) return;
+    if (!this.reservationForm.valid) return;
 
-    this.reservationService.addReservation(this.reservationForm.value as unknown as Reservation)
+    if (!this.id)
+      this.reservationService.addReservation(this.reservationForm.value as unknown as Reservation)
+    else {
+      this.reservationService.updateReservation({ id: this.id, ...this.reservationForm.value } as unknown as Reservation)
+      this.router.navigate(['/reservation/list']);
+    }
     this.reservationForm.reset();
-
   }
 
-  checkrequired(controlName: keyof typeof this.reservationForm.controls) {
+  checkRequired(controlName: keyof typeof this.reservationForm.controls) {
     return this.reservationForm.controls[controlName].errors?.['required'] && this.reservationForm.controls[controlName].touched;
   }
 

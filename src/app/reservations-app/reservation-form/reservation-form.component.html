@@ -14,7 +14,7 @@
 
     <div>
         <label>
-            Check out date:
+            Check out date: 
         </label>
         <input type="date" formControlName="checkOutDate">
         @if(checkValid('checkOutDate') ) {
@@ -47,7 +47,7 @@
             room number :
         </label>
         <input type="number" formControlName="roomNumber">
-        @if(checkrequired('roomNumber')) {
+        @if(checkRequired('roomNumber')) { 
         <p>Room number is required</p>
         }
         @if(checkCustomValidation('roomNumber','notGreaterThanZero')) {

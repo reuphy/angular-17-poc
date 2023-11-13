@@ -1,5 +1,8 @@
-@if(reservations().length > 0) {
+@if (reservations(); as data) {
 <div class="container">
+    @if(data.isLoading) {
+        <h3>Chargement...</h3>
+    }
     <table>
         <thead>
             <tr>
@@ -11,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-            @for(reservation of reservations();track $index) {
+            @for(reservation of data.value ;track $index) {
             <tr>
                 <td>{{ reservation.guestName }}</td>
                 <td>{{ reservation.checkInDate | date }}</td>
@@ -23,12 +26,12 @@
                 </td>
             </tr>
             }
+            @if(data.value?.length === 0) {
+                <h3>
+                    No reservations found
+                </h3>
+            }
         </tbody>
     </table>
-</div>
-}
-@else {
-<div class="no-reservations">
-    <p>No reservations found.</p>
 </div>
 }

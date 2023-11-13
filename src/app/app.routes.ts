@@ -26,6 +26,10 @@ export const routes: Routes = [
         path: 'reservation/list',
         component: ReservationListComponent
     },
+    {
+        path: 'reservation/edit/:id',
+        component: ReservationFormComponent
+    }
     // {
     //     path: '**',
     //     redirectTo: 'reservations'
