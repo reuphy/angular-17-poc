@@ -3,5 +3,13 @@
     <a routerLink="/reservations">Reservations</a>
     <a routerLink="/products">Products</a>
 </nav>
+@if(isProductRoute()){
+<div>
+    <mat-toolbar color="primary">
+        <button mat-button routerLink="/products">Products</button>
+        <button mat-button routerLink="/cart">Card</button>
+    </mat-toolbar>
+</div>
+}
 
 <router-outlet></router-outlet>

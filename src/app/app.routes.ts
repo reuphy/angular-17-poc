@@ -4,6 +4,7 @@ import { ReservationListComponent } from './reservations-app/reservation-list/re
 import { ReservationHomeComponent } from './reservations-app/reservation-home/reservation-home.component';
 import { ReservationFormComponent } from './reservations-app/reservation-form/reservation-form.component';
 import { ProductListComponent } from './product-app/product-list/product-list.component';
+import { CartViewComponent } from './product-app/cart-view/cart-view.component';
 
 export const routes: Routes = [
     {
@@ -34,7 +35,12 @@ export const routes: Routes = [
     {
         path: 'products',
         component: ProductListComponent
-    }
+    },
+    {
+        path: 'cart',
+        component: CartViewComponent
+    },
+
     // {
     //     path: '**',
     //     redirectTo: 'reservations'

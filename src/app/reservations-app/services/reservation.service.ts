@@ -11,10 +11,6 @@ export interface HttpRequestState<T> {
   value?: T;
   error?: Error
 }
-export interface FetchTodoResponse<T> {
-  message: string;
-  taksList: T;
-}
 @Injectable({
   providedIn: 'root'
 })

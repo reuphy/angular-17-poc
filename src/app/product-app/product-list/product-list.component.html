@@ -1,6 +1,25 @@
-<button mat-raised-button>Basic</button>
-<button mat-raised-button color="primary">Primary</button>
-<button mat-raised-button color="accent">Accent</button>
-<button mat-raised-button color="warn">Warn</button>
-<button mat-raised-button disabled>Disabled</button>
-<a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+<h1 style="margin: 2rem;display: flex;justify-content: center;">
+    Amazing Painting products
+</h1>
+
+<div style="margin: 2rem;" class="card-container">
+    @if(products()?.isLoading) {
+    <h3>
+        Loading...
+    </h3>
+    }
+    @for(product of products()?.value; track $index) {
+    <mat-card class="example-card">
+        <img mat-card-image src="{{product.imageUrl}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-subtitle>{{product.price | currency:'EUR'}}</mat-card-subtitle>
+        </mat-card-content>
+    </mat-card>
+    }
+    @if(products()?.value?.length === 0) {
+    <h3>
+        No products found
+    </h3>
+    }
+</div>

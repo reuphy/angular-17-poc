@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatButtonModule} from '@angular/material/button';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ProductService } from '../services/product.service';
+import {MatCardModule} from '@angular/material/card';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, MatButtonModule],
+  imports: [CommonModule, MatCardModule, RouterOutlet], 
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+  productService = inject(ProductService);
+
+  products = toSignal(this.productService.getProducts())
+
+
 
 }
