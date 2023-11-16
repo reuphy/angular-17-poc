@@ -1,7 +1,25 @@
-@if (reservations(); as data) {
+<form [formGroup]="search">
+    <div class="search-container">
+      <h2>Search by Guest Name</h2>
+      <div class="form-group">
+        <label for="guestName">Name</label>
+        <input id="guestName" type="text" formControlName="guestName" class="form-control" /> 
+      </div>
+    </div>
+    <div style="margin-top: 2rem;" class="search-container">
+
+      <h2>Search by Room number</h2>
+      <div class="form-group">
+        <label for="room">Room Number</label>
+        <input id="room" type="text" formControlName="room" class="form-control" />
+      </div>
+    </div>
+    </form>
+
+@if (reservations(); as data) {  
 <div class="container">
     @if(data.isLoading) {
-        <h3>Chargement...</h3>
+        <h3>Loading...</h3>
     }
     <table>
         <thead>
@@ -26,7 +44,7 @@
                 </td>
             </tr>
             }
-            @if(data.value?.length === 0) {
+            @if(data.value.length === 0) {
                 <h3>
                     No reservations found
                 </h3>

@@ -33,3 +33,6 @@ npx -p @angular/cli@17 ng new --directory .
 19) { <p>Room number must be greater than 0</p>}
 20) git push origin develop
 stop 85
+21) Angular et RxJS : un cas d'usage pour découvrir les observables (2023)
+*https://www.youtube.com/watch?v=93DOxts87U8
+combine latest : 5 minutes - 8m27 exemple de filtre dans un array

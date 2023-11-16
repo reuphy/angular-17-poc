@@ -3,7 +3,7 @@ import { Product } from '../models/product';
 import { Observable, catchError, delay, map, of, startWith } from 'rxjs';
 import { HttpRequestState } from '../../reservations-app/services/reservation.service';
 
-export function withRequestState<T>(source: Observable<T>): Observable<{ isLoading: boolean, value?: T, error?: any }> {
+export function asRequestState<T>(source: Observable<T>): Observable<HttpRequestState<T>> {
   return source.pipe(
     map((value) => ({ isLoading: false, value })),
     catchError(error => of({ isLoading: false, error })),
@@ -57,6 +57,6 @@ export class ProductService {
   ]
 
   getProducts(): Observable<HttpRequestState<Product[]>> {
-    return withRequestState(of(this.products).pipe(delay(2000))) 
+    return asRequestState(of(this.products).pipe(delay(2000))) 
   }
 }

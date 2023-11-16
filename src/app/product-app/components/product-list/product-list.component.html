@@ -3,12 +3,10 @@
 </h1>
 
 <div style="margin: 2rem;" class="card-container">
-    @if(products()?.isLoading) {
-    <h3>
-        Loading...
-    </h3>
-    }
+    @if(products()?.isLoading) { <h3>Loading...</h3> }
+
     @for(product of products()?.value; track $index) {
+
     <mat-card class="example-card">
         <img mat-card-image src="{{product.imageUrl}}" alt="Photo of a Shiba Inu">
         <mat-card-content>
@@ -16,10 +14,8 @@
             <mat-card-subtitle>{{product.price | currency:'EUR'}}</mat-card-subtitle>
         </mat-card-content>
     </mat-card>
+
     }
-    @if(products()?.value?.length === 0) {
-    <h3>
-        No products found
-    </h3>
-    }
+
+    @if(products()?.value?.length === 0) { <h3>No products found</h3> }
 </div>
