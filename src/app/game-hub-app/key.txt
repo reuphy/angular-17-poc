@@ -1,2 +1,4 @@
 api : https://api.rawg.io/api
 key : 89dda7f3885d4946a0d9a012c391ae84
+
+https://members.codewithmosh.com/courses/ultimate-react-part1-1/lectures/45916283

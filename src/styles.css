@@ -1,8 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
-/* @import url('@angular/material/prebuilt-themes/pink-bluegrey.css');  */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/* @import url('../node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css'); */
-/* angular/material/prebuilt-themes/indigo-pink.css */
+
+/* styles.css */
+
+/* Thème clair par défaut */
+body {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Thème sombre */
+  .dark-mode {
+    background-color: #424242!important;
+    color: white;
+  }
+
+  .light-mode {
+    background-color: #0e5f88!important;
+}
+
+  

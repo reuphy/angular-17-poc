@@ -1,6 +1,7 @@
-<mat-toolbar color="primary">
-    <img src="../../../../assets/images/logo.webp" alt="Logo" class="logo">
-    <!-- <span class="spacer"></span> -->
-    <!-- <button mat-button routerLink="/link1">Link 1</button>
-    <button mat-button routerLink="/link2">Link 2</button> -->
-  </mat-toolbar> 
+ 
+<mat-toolbar [class]="darkModeService.darkModeClass()"> 
+    <div class="nav-bar">
+        <img src="../../../../assets/images/logo.webp" alt="Logo" class="logo">
+        <app-dark-mode-toggle></app-dark-mode-toggle>
+    </div>
+</mat-toolbar> 

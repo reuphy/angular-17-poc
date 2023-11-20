@@ -2,7 +2,9 @@
     height: 50px;
 }
 
-.mat-toolbar.mat-primary {
-    --mat-toolbar-container-background-color: #0e5f88;
-    --mat-toolbar-container-text-color: rgba(0, 0, 0, 0.87);
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
