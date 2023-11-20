@@ -14,8 +14,8 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private router = inject(Router);
-  private route = toSignal<Event>(this.router.events.pipe(filter(event => event instanceof NavigationEnd)))
+  // private router = inject(Router);
+  // // private route = toSignal<Event>(this.router.events.pipe(filter(event => event instanceof NavigationEnd)))
 
-  isProductRoute() { return this.route()?.toString().includes('products') }
+  // // isProductRoute() { return this.route()?.toString().includes('products') }
 }

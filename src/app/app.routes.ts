@@ -5,6 +5,7 @@ import { ReservationHomeComponent } from './reservations-app/reservation-home/re
 import { ReservationFormComponent } from './reservations-app/reservation-form/reservation-form.component';
 import { ProductListComponent } from './product-app/components/product-list/product-list.component';
 import { CartViewComponent } from './product-app/components/cart-view/cart-view.component';
+import { HomeComponent } from './game-hub-app/components/home/home.component';
 
 export const routes: Routes = [
     {
@@ -39,6 +40,10 @@ export const routes: Routes = [
     {
         path: 'cart',
         component: CartViewComponent
+    },
+    {
+        path: 'game-hub',
+        component: HomeComponent
     },
 
     // {

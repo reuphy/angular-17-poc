@@ -2,14 +2,7 @@
     <a routerLink="/appointments">Appointments</a>
     <a routerLink="/reservations">Reservations</a>
     <a routerLink="/products">Products</a>
+    <a routerLink="/game-hub">Game Hub</a>
 </nav>
-@if(isProductRoute()){
-<div>
-    <mat-toolbar color="primary">
-        <button mat-button routerLink="/products">Products</button>
-        <button mat-button routerLink="/cart">Card</button>
-    </mat-toolbar>
-</div>
-}
 
 <router-outlet></router-outlet>
