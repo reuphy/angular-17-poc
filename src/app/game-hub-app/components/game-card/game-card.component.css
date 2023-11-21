@@ -1,0 +1,24 @@
+.mat-mdc-card {
+    margin: 8px;
+}
+
+mat-card-title {
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-card-content.mat-mdc-card-content {
+    background-color: grey;
+}
+
+img.mat-mdc-card-image.mdc-card__media {
+    height: 250px;
+}
+
+.grid-card {
+    width: 380px;
+    height: 400pxpx;
+}
