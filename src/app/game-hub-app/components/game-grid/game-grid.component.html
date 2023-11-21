@@ -1,20 +1,18 @@
-<ng-container *ngIf="games() as data">
+<div class="card-container">
+    @if(games()?.isLoading) { <h3>Loading...</h3> }
 
-    <div *ngIf="data.error">
-        {{data.error | json}}
-    </div>
+    @if(games()?.error) { <h3>{{games()?.error | json}}</h3> }
 
-    <div *ngIf="data.isLoading">
-        Loading ...
-    </div>
+    @for(game of games()?.value?.results; track $index) {
 
-    <mat-list>
-        @for(game of data.value?.results ;track $index) {
-        <mat-list-item>
-            <p>
-                {{ game.name }}
-            </p>
-        </mat-list-item>
-        }
-    </mat-list>
-</ng-container>
+    <mat-card class="grid-card">
+        <img mat-card-image src="{{game.background_image}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <mat-card-title>{{game.name}}</mat-card-title>
+            <!-- <mat-card-subtitle>{{product.price | currency:'EUR'}}</mat-card-subtitle> -->
+        </mat-card-content>
+    </mat-card>
+    }
+
+    @if(games()?.value?.results?.length === 0) { <h3>No Games found</h3> }
+</div>

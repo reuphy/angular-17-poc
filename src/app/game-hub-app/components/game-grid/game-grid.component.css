@@ -1,0 +1,27 @@
+.grid-card {
+    width: 380px;
+    height: 400pxpx;
+  }
+
+  img.mat-mdc-card-image.mdc-card__media {
+    height: 250px;
+}
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+  } 
+
+  .mat-mdc-card {
+   margin: 8px;
+  }
+
+  mat-card-title {
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
