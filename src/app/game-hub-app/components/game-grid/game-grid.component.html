@@ -1,0 +1,24 @@
+<ng-container *ngIf="games() as data">
+
+    <div *ngIf="data.error">
+        {{data.error | json}}
+    </div>
+
+    <div *ngIf="data.isLoading">
+        Loading ...
+    </div>
+
+    <mat-list>
+        @for(game of data.value?.results ;track $index) {
+        <mat-list-item>
+            <p>
+                {{ game.name }}
+            </p>
+        </mat-list-item>
+        }
+    </mat-list>
+</ng-container>
+
+<!-- <pre>
+    {{ games() | json }}
+</pre> -->

@@ -17,7 +17,11 @@ body {
   }
 
   .light-mode {
-    background-color: #0e5f88!important;
+    background-color: white!important;
+}
+
+p, span {
+  color: black; 
 }
 
   
