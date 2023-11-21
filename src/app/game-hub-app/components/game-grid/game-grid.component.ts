@@ -11,11 +11,10 @@ import { MatListModule } from '@angular/material/list';
   standalone: true,
   imports: [CommonModule, MatListModule],
   templateUrl: './game-grid.component.html',
-  styleUrl: './game-grid.component.css' 
-})   
+  styleUrl: './game-grid.component.css'
+})
 export class GameGridComponent {
-  // private apiKey = '89dda7f3885d4946a0d9a012c391ae84'; // Remplacez par votre clé d'API
-    private gameService = inject(GameService);
-  // private gameService = inject(FakeGameService);
-  games = toSignal(this.gameService.getGames())   
+  // private gameService = inject(GameService);
+   private gameService = inject(FakeGameService);
+  games = toSignal(this.gameService.getAll())
 }

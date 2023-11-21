@@ -11,19 +11,13 @@ export class FakeGameService {
 
   games: FetchGamesData = (gamesMock)
 
-  readonly loading$ = this.getGames().pipe(map(state => state.isLoading));
-  readonly error$ = this.getGames().pipe(map(state => state.error));
-  readonly myData$ = this.getGames().pipe(map(state => state.value));
-
-  getGames(): Observable<HttpRequestState<FetchGamesData>> {
+  getAll(): Observable<HttpRequestState<FetchGamesData>> {
     return of(this.games)
       .pipe(delay(1000))
       .pipe(
         map((value) => ({ isLoading: false, value })),
         catchError(error => of({ isLoading: false, error })),
         startWith({ isLoading: true }),
-        shareReplay(1)
       )
   }
-
 }
