@@ -1,0 +1,76 @@
+stakeholders : ceo and directors or investors of project
+scrum : framework to deal with complex work (project management method)
+artifacts : objects/tool made by humans. 
+artifact  example: shopping list
+scrum has 3 artefacts :
+1 product backlog
+2 sprint backlog
+3 increment or product increment
+it s goal : work value and transparency inspection  adaptation
+each scrum artifacts commitments :
+product backlog : product goal and long term objective
+sprint backlog : sprint goal define by scrum team, every sprints brings closer to the product goal
+increment : commitment to the definition of done (the desired quality product should have)
+commitment : dedicated to achieve something specific also why the work is important and what is the desired outcome. so Clear goals and dedication
+most product develop by originations has their own goals and  larger visions
+example : apple best product, macdo best fast food experience ...
+Visions are created without knowing how to do it, technologies or experience
+to rich the vison, we have to go to multiple milestones/baby steps goals.  you have to break down large goals into clear and achievable steps.
+sprint goal : every objective achieved bring you closer to product goal
+product goal : long term objective, important step toward product vision
+and there is one  product goal at a time (single direction at a time)
+product vision goal (not required in scrum) 1 year, 10 years, ... but can make sense to create one.
+scrum participants goes toward sprint goal, product goal, product vision
+a goal helps on one direction and focus on transparency,  inspection ( on the right track ), adaptation (changes if needed )
+Artefact product backlog: accumulation of unfinished work ( like a to-do-list ) 
+to reach one goal related to the product. Usually they start unorder then we order them.
+transparency : refine the task if not clear with concise/precisions words
+inspection : process of looking at backlog and observing current conditions
+adaptation : something is missing, wrong, unclear, and needs to be changed 
+refinement : backlog needs to be continuously improved, clarifying details, questions, adding new things
+product backlog is designed for : transparency, inspection, adapation
+prod bg is an ordered list of everting needed in the product
+can contain new feature (functionnalities), improvments to existing once,
+fixes or changes.
+prod bg items : acronym "PBI" 
+composition/attribute of an item :
+1) description
+2) order
+3) size
+4) value
+5) acceptance criteria
+the only person accountable for pd bg is the prodcut owner
+prduct backlog changes = changes activites in pd bg
+management pd bg :
+starts with a goal or vision, PO defines objectives to be achieved, he collaborates with stakeholders and add new features, ideas to pd bg
+protocole : only having items that help to reach the product goal
+product goal : commitment for the product backlog
+no goal competes in parallels and for more attention (only 1 pr g at a time)
+PO can add remove order PBIS when he want and work close with IT
+During pd bg refinment : IT and PO collaborate on breaking down larger items into smaller ones that are easier to describe and develop. Smaller is better
+also work on any details, size, order
+size/estimation : how small or big the effort is
+Developers are responsible for sizing
+po and dev collaborates to understand the items and often finding ways to reduce complexity by making tradoffs (negociate)
+pr bg is never complete or final and constantly change, it grows with the product it self and changes based on business requirements, market ..
+items that the top are ready for the next spring and are small enough, detailes, and immediately actionable (dev can start right away on it)
+Life of PO :
+Define a product goal, and start the PD BG before the sprint begings. Remember : PO is accountable for defining PG and manage the PD BG
+Scrum no detail planned at the begining.
+example PG : reach 10000 users in the next 6 month, then add list of small feature in the PD BG. any idea or feature will end up in the PD BG.
+Once set in the PDBG they wont mean a lot so Owner will work with developers to add more details so in PBI'S with 
+1) description 2) order 3) size 4) value 5) acceptance criteria.
+this is not scrum and not mandatory but in practice Teams use users stories :
+short description of feature explained from perspective of person who desired the functionality.
+3 step process : card conversation confirmation.
+Card : paper card size (post it) holds a brief description
+conversation : as a < user > i want < some objective > so that < get some outcome >  ( Who what why : benefit of implementing user story, has value and not something no body want )
+confirmation : acceptance criteria : a way to test if story is complete
+order of PDBG : from top to bottom.
+Everting's needs to be done for the product must go to PD BG (feature, bug, .. or anithing else related to product) and PO can add edit into it.
+next step is to clarify details, order makes sense, estimate.
+esitiame = sizing = guess of effort necessary to carry a task
+sprint planning meeting : Po explains what needs to be done to increase value of product and entire team formulates a sprint goal
+
+
+
