@@ -13,7 +13,7 @@ export class FakeGameService {
 
   getAll(): Observable<HttpRequestState<FetchGamesData>> {
     return of(this.games)
-      .pipe(delay(1000))
+      .pipe(delay(2000))
       .pipe(
         map((value) => ({ isLoading: false, value })),
         catchError(error => of({ isLoading: false, error })),

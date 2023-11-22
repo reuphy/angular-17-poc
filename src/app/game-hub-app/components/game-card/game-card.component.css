@@ -14,7 +14,7 @@ mat-card-content.mat-mdc-card-content {
     background-color: grey;
 }
 
-img.mat-mdc-card-image.mdc-card__media {
+img{
     height: 250px;
 }
 

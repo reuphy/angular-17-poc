@@ -10,12 +10,22 @@
 </h1>
 
 <div style="margin: 2rem;" class="card-container">
-    @if(products()?.isLoading) { <h3>Loading...</h3> }
+    @if(products()?.isLoading) {
+        @for(n of [1,2,3,4,5,6]; track $index) {
+        <div style="display: flex;flex-direction:column;margin: 1rem;">
+            <div style="width: 150px;height: 150px;" class="skeleton-loader">
+            </div>
+            <div style="width: 150px;height: 70px;background-color: white;;">
+                <p class="skeleton-loader" style="color: white;">-</p>
+                <p class="skeleton-loader" style="color: white;">-</p>
+            </div>
+        </div>
+        }
+    }
 
     @for(product of products()?.value; track $index) {
-
     <mat-card class="example-card">
-        <img mat-card-image src="{{product.imageUrl}}" alt="Photo of a Shiba Inu">
+        <img src="{{product.imageUrl}}" alt="Photo of a Shiba Inu">
         <mat-card-content>
             <mat-card-title>{{product.name}}</mat-card-title>
             <mat-card-subtitle>{{product.price | currency:'EUR'}}</mat-card-subtitle>
