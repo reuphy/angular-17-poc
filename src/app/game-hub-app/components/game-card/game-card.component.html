@@ -2,6 +2,8 @@
     <img src="{{game.background_image}}" alt="Photo of a Shiba Inu">
     <mat-card-content>
         <mat-card-title>{{game.name}}</mat-card-title>
-        <!-- <mat-card-subtitle>{{product.price | currency:'EUR'}}</mat-card-subtitle> -->
+        @for(platform of game.platforms; track $index) {
+            <app-svg-icon [icon]="platform.platform.name"></app-svg-icon>
+        }
     </mat-card-content>
 </mat-card>
