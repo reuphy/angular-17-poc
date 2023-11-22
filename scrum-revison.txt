@@ -1,3 +1,5 @@
+https://capgemini.udemy.com/course/agile-scrum-for-beginners-scrum-master-certification-preparation/learn/lecture/24522108#overview
+
 stakeholders : ceo and directors or investors of project
 scrum : framework to deal with complex work (project management method)
 artifacts : objects/tool made by humans. 
@@ -71,6 +73,26 @@ Everting's needs to be done for the product must go to PD BG (feature, bug, .. o
 next step is to clarify details, order makes sense, estimate.
 esitiame = sizing = guess of effort necessary to carry a task
 sprint planning meeting : Po explains what needs to be done to increase value of product and entire team formulates a sprint goal
-
+by collaborating with PO, DEV's will decide wich items from top form PD BG to add to the sprint backlog. Sprint BG will also contain a plan to deliver product increment
+and realise the sprint goal.
+diff sprint back log and PD BG : PDBG, order list of features, ideas, fix... (PBI's). SP BG created at begining of every sprint and contains PBI's done in the current sprint
++ plan + sprint goal. All items from SPG comes from PD BG
+Plan : decomposition of each PBIS in smaller work units (often called 'TASKS') to build increment
+PBIS reprensent the 'what' will be deliverd , plan : 'how' wil it happen, sprint goal : 'why' is the sprint valuable (guidance and flexibility )
+dev's created a forecast for what will be delivered, it is not a garantie
+SPBG makes transparency and commitment to those tasks 
+SPGB is like a temporary artefacts that exist during the sprint. Every sprint will have a new SPBG and any unfinished work are putting back in PD BG
+and owner decides what happen next. PDBG is owner accountability and SPBG it is Devs accountability. Devs owns SPBG and PO can not make changes without collaborate first
+devs will modify SPBG if they think it is necessary.
+Total work remaining from SPBG is tracked every daily scrum
+When devs selected PBIS they go from top to bottom (order is important and is the same as PDBG) if they want to change the order they have to convice PO.
+After PBIS are selected a sprint goal is set example : 'Feature the most popular product on the homepage' even if the goal is simple it describes what should happen
+a Goal helps devs to go on the same direction + flexibility. 
+SPBG is a temporary artefact that has items from PDBG and PDGB has the rest of the items
+during the sprint devs and po will continue to refine items in the PDBG in preparation for the upcoming sprint.
+Items from SPBG is the same as PBIS but it s that some PBIS have been moved to SPBG. if devs wants during the sprint they can take more items from PDBG or put back if
+they think they took too much but they need aggreement with PO.
+SPBG is negociable, sprint goal is fixed.
+Sprint planning meeting : devs plan items, divide/break down items into tasks
 
 

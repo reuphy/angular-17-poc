@@ -17,7 +17,6 @@ import { GameCardSkeletonComponent } from '../game-card-skeleton/game-card-skele
   styleUrl: './game-grid.component.css'
 })
 export class GameGridComponent {
-  // private gameService = inject(GameService);
-   private gameService = inject(FakeGameService);
+  private gameService = inject(GameService);
   games = toSignal(this.gameService.getAll())
 } 
