@@ -1,4 +1,4 @@
-https://capgemini.udemy.com/course/agile-scrum-for-beginners-scrum-master-certification-preparation/learn/lecture/24522108#overview
+https://capgemini.udemy.com/course/agile-scrum-for-beginners-scrum-master-certification-preparation/learn/lecture/24445878#overview
 
 stakeholders : ceo and directors or investors of project
 scrum : framework to deal with complex work (project management method)
@@ -94,5 +94,12 @@ Items from SPBG is the same as PBIS but it s that some PBIS have been moved to S
 they think they took too much but they need aggreement with PO.
 SPBG is negociable, sprint goal is fixed.
 Sprint planning meeting : devs plan items, divide/break down items into tasks
-
+diff between sprint scope and sprint goal :
+scope of sprint BG : can be renegociated and sprint goal don't change during the sprint.
+scope are the amount of work to reach a goal :
+example : goal : cleaning on weekend, scope : clean the bathroom task, vacum task , .. scope you can change it or remove one taks
+or reduce it but goal has to remain the same.
+Scope of SPBG: amount of slected PBIS
+product increment = new version of product, in addition of previous sprints. Devs deliver at least a new product increment after each sprint, each increment is
+an improvment vesrion of the product
 

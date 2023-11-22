@@ -1,0 +1,15 @@
+.score {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+}
+
+.yellow {
+    background: yellow;
+    color: black;
+}
+
+.green {
+    background: green;
+    color: white;
+}

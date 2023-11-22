@@ -3,17 +3,18 @@ import { of, delay, map, catchError, startWith, shareReplay, Observable } from '
 import { FetchGamesData } from '../../interfaces/games';
 import { HttpRequestState } from '../../interfaces/httpRequestState';
 import { gamesMock } from './games-mocks';
+import { genresMock } from './genres-mocks';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FakeGameService {
+export class FakeGenreService {
 
-  games: FetchGamesData = gamesMock;
+  genres = genresMock;
 
-  getAll(): Observable<HttpRequestState<FetchGamesData>> {
-    return of(this.games)
-      .pipe(delay(2000))
+  getAll() {
+    return of(this.genres)
+      // .pipe(delay(2000))
       .pipe(
         map((value) => ({ isLoading: false, value })),
         catchError(error => of({ isLoading: false, error })),

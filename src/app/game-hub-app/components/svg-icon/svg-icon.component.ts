@@ -16,6 +16,10 @@ export class SvgIconComponent {
   @Input() fill?: string;
   @Input() class?: string;
 
+  ngOnInit() {
+    this.icon = this.getPlatform(this.icon);  
+  }
+
   getPlatform(platformName: string): string {
     const platforms = ['playstation', 'xbox', 'nintendo', 'steam'];
     const foundPlatform = platforms.find(platform => platformName.toLowerCase().includes(platform));

@@ -22,3 +22,9 @@ img{
     width: 380px;
     height: 400pxpx;
 }
+
+.foooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
