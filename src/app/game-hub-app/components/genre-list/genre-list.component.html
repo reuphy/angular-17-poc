@@ -1,0 +1,21 @@
+<div>
+
+    @if(genres()?.isLoading) {<h3 class="loading">Loading</h3>}
+    
+    @if(genres()?.error) { <h3>{{genres()?.error | json}}</h3> }
+
+    @for(genre of genres().value?.results; track $index) {
+
+        <div style="display: flex;align-items: center; margin-bottom: 8px;">
+            <img src="{{getCroppedImageUrl(genre.image_background)}}">
+            <p
+            [class]="darkModeService.darkModeClass()"
+            >
+                {{genre.name }}
+            </p>
+        </div>
+    }
+
+    @if(genres()?.value?.results?.length === 0) { <h3>No Genres found</h3> }
+    
+</div>

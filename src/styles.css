@@ -13,7 +13,7 @@ body {
   /* Thème sombre */
   .dark-mode {
     background-color: #424242!important;
-    color: white;
+    color: white!important;
   }
 
   .light-mode {

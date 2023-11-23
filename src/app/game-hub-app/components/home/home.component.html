@@ -1,17 +1,7 @@
 <app-navbar></app-navbar>
 <div [class]="darkModeService.darkModeClass()">
-    <div style="display: flex; padding: 0 16px"> 
-        <div>
-            <div>
-                {{genres().value.results[0].name }}  
-            </div>
-            <div>
-                {{genres().value.results[1].name }}  
-            </div>
-            <div>
-                {{genres().value.results[2].name }}  
-            </div>
-        </div>
+    <div class="container"> 
+        <app-genre-list></app-genre-list>
         <app-game-grid></app-game-grid>
     </div>
 </div>

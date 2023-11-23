@@ -15,6 +15,6 @@ export class AppComponent {
 
   ngOnInit() {
     // set in localStorage to true to use mocks
-    localStorage.setItem('mocks', 'false');
+    localStorage.setItem('mocks', 'true');
   }
 }

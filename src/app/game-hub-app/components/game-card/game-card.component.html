@@ -1,5 +1,5 @@
 <mat-card class="grid-card">
-    <img src="{{game.background_image}}" alt="Photo of a Shiba Inu">
+    <img src="{{game.background_image}}">
     <mat-card-content>
         <mat-card-title>{{game.name}}</mat-card-title>
         <div class="foooter">
@@ -9,9 +9,6 @@
                 }
             </div>
             <app-game-score [metacritic]="game.metacritic"></app-game-score>
-            <!-- <div class="score">
-               score : {{game.metacritic}}
-            </div> -->
         </div>
     </mat-card-content>
 </mat-card>

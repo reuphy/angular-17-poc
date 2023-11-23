@@ -1,0 +1,21 @@
+.container {
+    display: flex; 
+}
+
+app-genre-list {
+    display: none;
+}
+
+/* display none if under 650px */
+@media (min-width: 651px) {
+    app-genre-list {
+        display: block;
+    }
+}
+
+/* display none if under 650px */
+@media (min-width: 376px) {
+   .container {
+    padding: 0 16px
+   } 
+}

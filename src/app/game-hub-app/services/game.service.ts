@@ -11,7 +11,8 @@ export class GameService {
   fakeGameService = inject(FakeGameService)
   private apiKey = '89dda7f3885d4946a0d9a012c391ae84';
   private endPoint = 'https://api.rawg.io/api/games?key=';
-  
+  // https://api.rawg.io/api/games?key=89dda7f3885d4946a0d9a012c391ae84&genres=3
+
   constructor() {
     this.httpService.endPoint = `${this.endPoint}${this.apiKey}`;
   } 
@@ -21,5 +22,6 @@ export class GameService {
 
     return this.httpService.getAll<FetchGamesData>()
   }
+   
 }
  
