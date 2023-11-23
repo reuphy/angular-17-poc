@@ -1,27 +1,39 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-/* styles.css */
-
-/* Thème clair par défaut */
+html,
 body {
-    background-color: white;
-    color: black;
-  }
-  
-  /* Thème sombre */
-  .dark-mode {
-    background-color: #424242!important;
-    color: white!important;
-  }
-
-  .light-mode {
-    background-color: white!important;
+  height: 100%;
 }
 
-p, span {
-  color: black; 
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: white;
+  color: black;
 }
 
-  
+.dark-mode {
+  background-color: #424242 !important;
+  color: white !important;
+}
+
+.dark-mode:hover {
+  color: #007BFF !important;
+  cursor: pointer;
+}
+
+.light-mode {
+  background-color: white !important;
+}
+
+:root {
+  --mat-option-selected-state-label-text-color: #007BFF !important;
+  --mdc-filled-text-field-focus-active-indicator-color: #007BFF !important;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: #007BFF !important;
+}
+
+.mat-mdc-select-arrow svg {
+  fill: white !important;
+}

@@ -1,4 +1,5 @@
-https://capgemini.udemy.com/course/agile-scrum-for-beginners-scrum-master-certification-preparation/learn/lecture/24445878#overview
+https://capgemini.udemy.com/course/agile-scrum-for-beginners-scrum-master-certification-preparation/learn/lecture/24519668#overview
+0m11
 
 stakeholders : ceo and directors or investors of project
 scrum : framework to deal with complex work (project management method)
@@ -100,6 +101,17 @@ scope are the amount of work to reach a goal :
 example : goal : cleaning on weekend, scope : clean the bathroom task, vacum task , .. scope you can change it or remove one taks
 or reduce it but goal has to remain the same.
 Scope of SPBG: amount of slected PBIS
-product increment = new version of product, in addition of previous sprints. Devs deliver at least a new product increment after each sprint, each increment is
-an improvment vesrion of the product
+product increment = new version of product, it's additive to all previous sprints increments. Devs deliver at least a new product increment after each sprint, 
+each new increment is an improved and usuable vesrion of the prodcut. The po decices when to release the increment
+Every product increment needs to be updeated without needing any addtional work
+product increment done : what means done ? : quaility standard of the organization need to be followed at a minimum
+definition of done = completion of work = scrum team should create a definiton of done wich can be used to assess of the work perform is following the 
+aggreed folowing criteria.
+example of definition of done : creation of a new jam with a minimum of requirements : contains only organic ingredients, row material from small litle farm,
+logo brand must be visible, label must show the number of calories, sugar, ..., conform with health standard ...
+if one of those criteria is not there then it is not done
+during sprint retrospective the team can re adapt the definition of done. Def of done makes transparancy for proudct increment.
+def of done is a good indecator for devs for how much to take PBIS during the sprint planning meeting
+def of done is a commitment for the increment
+   
 

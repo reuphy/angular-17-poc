@@ -1,18 +1,21 @@
-<div class="card-container">
+<div style="display: flex; flex-direction: column;">
+    <app-platform-selector></app-platform-selector>
 
-    @if(games()?.isLoading) {
+    <div class="card-container">
+        @if(games()?.isLoading) {
         @for(n of [1,2,3,4,5,6,7,8,9,10]; track $index) {
         <app-game-card-skeleton></app-game-card-skeleton>
         }
-    }
+        }
 
-    @if(games()?.error) { <h3>{{games()?.error | json}}</h3> }
+        @if(games()?.error) { <h3>{{games()?.error | json}}</h3> }
 
-    @for(game of games()?.value?.results; track $index) {
+        @for(game of games()?.value?.results; track $index) {
 
-    <app-game-card [game]="game"></app-game-card>
-    }
+        <app-game-card [game]="game"></app-game-card>
+        }
 
-    @if(games()?.value?.results?.length === 0) { <h3>No Games found</h3> }
+        @if(games()?.value?.results?.length === 0) { <h3>No Games found</h3> }
 
+    </div>
 </div>

@@ -4,11 +4,12 @@
     
     @if(genres()?.error) { <h3>{{genres()?.error | json}}</h3> }
 
-    @for(genre of genres().value?.results; track $index) {
+    @for(genre of genres()?.value?.results; track $index) {
 
         <div style="display: flex;align-items: center; margin-bottom: 8px;">
             <img src="{{getCroppedImageUrl(genre.image_background)}}">
             <p
+            (click)="getAllByGenre(genre.id)"
             [class]="darkModeService.darkModeClass()"
             >
                 {{genre.name }}

@@ -1,3 +1,4 @@
+import { GameService } from './../../services/game.service';
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GenreService } from '../../services/genre.service';
@@ -14,11 +15,16 @@ import { DarkModeService } from '../../services/dark-mode.service';
 })
 export class GenreListComponent {
   private genreService = inject(GenreService);
+  private gameService = inject(GameService);
   darkModeService = inject(DarkModeService);
 
-  genres:any = toSignal(this.genreService.getAll())
-
+  genres = toSignal(this.genreService.getAll())
+  
   getCroppedImageUrl(imageUrl: string) {
     return getCroppedImageUrl(imageUrl)
+  }
+
+  getAllByGenre(genreId: number) {
+    this.gameService.getAllByGenre(genreId); 
   }
 }

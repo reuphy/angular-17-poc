@@ -8,12 +8,12 @@ import { HttpRequestState } from '../interfaces/httpRequestState';
 })
 export class HttpService {
 
-  endPoint = '=';
+  // endPoint = '=';
   private http = inject(HttpClient);
 
-  getAll<T>(): Observable<HttpRequestState<T>> {
+  getAll<T>(endPoint:string): Observable<HttpRequestState<T>> {
 
-    const data = this.http.get<T>(this.endPoint)
+    const data = this.http.get<T>(endPoint)
 
     return data
       .pipe(

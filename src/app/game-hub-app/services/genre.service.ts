@@ -3,6 +3,7 @@ import { HttpService } from './http.service';
 import { Injectable, inject } from '@angular/core';
 import { FakeGameService } from './mocks/fake-game.service';
 import { FakeGenreService } from './mocks/fake-genres.service';
+import { FetchGenreData } from '../interfaces/genres';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,12 +15,13 @@ export class GenreService {
   private endPoint = 'https://api.rawg.io/api/genres?key=';
 
   constructor() {
-    this.httpService.endPoint = `${this.endPoint}${this.apiKey}`;
+    // this.httpService.endPoint = `${this.endPoint}${this.apiKey}`;
   }
 
   getAll() {
+    this.endPoint = `${this.endPoint}${this.apiKey}`;
     if (this.useMocks) return this.fakeGenreService.getAll();
 
-    return this.httpService.getAll<any>()
+    return this.httpService.getAll<FetchGenreData>(this.endPoint)
   }
 }
