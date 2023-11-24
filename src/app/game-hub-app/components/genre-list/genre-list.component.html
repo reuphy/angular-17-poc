@@ -1,6 +1,6 @@
 <div>
 
-    @if(genres()?.isLoading) {<h3 class="loading">Loading</h3>}
+    @if(genres()?.isLoading) { <app-loading-text></app-loading-text> }
     
     @if(genres()?.error) { <h3>{{genres()?.error | json}}</h3> }
 

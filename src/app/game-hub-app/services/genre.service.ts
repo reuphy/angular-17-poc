@@ -11,15 +11,9 @@ export class GenreService {
   useMocks = localStorage.getItem('mocks') === 'true';
   httpService = inject(HttpService)
   fakeGenreService = inject(FakeGenreService)
-  private apiKey = '89dda7f3885d4946a0d9a012c391ae84';
-  private endPoint = 'https://api.rawg.io/api/genres?key=';
-
-  constructor() {
-    // this.httpService.endPoint = `${this.endPoint}${this.apiKey}`;
-  }
+  private endPoint = '/genres';
 
   getAll() {
-    this.endPoint = `${this.endPoint}${this.apiKey}`;
     if (this.useMocks) return this.fakeGenreService.getAll();
 
     return this.httpService.getAll<FetchGenreData>(this.endPoint)

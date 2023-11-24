@@ -5,11 +5,12 @@ import { GameService } from '../../services/game.service';
 import { GameCardComponent } from '../game-card/game-card.component';
 import { GameCardSkeletonComponent } from '../game-card-skeleton/game-card-skeleton.component';
 import { PlatformSelectorComponent } from '../platform-selector/platform-selector.component';
+import { SortSelectorComponent } from '../sort-selector/sort-selector.component';
 
 @Component({
   selector: 'app-game-grid',
   standalone: true,
-  imports: [CommonModule, GameCardComponent, GameCardSkeletonComponent, PlatformSelectorComponent],
+  imports: [CommonModule, GameCardComponent, GameCardSkeletonComponent, PlatformSelectorComponent, SortSelectorComponent],
   templateUrl: './game-grid.component.html',
   styleUrl: './game-grid.component.css'
 })

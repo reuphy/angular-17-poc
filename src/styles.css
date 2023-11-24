@@ -17,7 +17,6 @@ body {
 
 .dark-mode:hover {
   color: #007BFF !important;
-  cursor: pointer;
 }
 
 .light-mode {

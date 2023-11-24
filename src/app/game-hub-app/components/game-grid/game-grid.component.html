@@ -1,5 +1,8 @@
 <div style="display: flex; flex-direction: column;">
-    <app-platform-selector></app-platform-selector>
+    <div style="display: flex;">
+        <app-platform-selector></app-platform-selector>
+        <app-sort-selector></app-sort-selector>
+    </div>
 
     <div class="card-container">
         @if(games()?.isLoading) {
