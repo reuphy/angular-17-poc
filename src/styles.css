@@ -28,6 +28,11 @@ body {
   --mdc-filled-text-field-focus-active-indicator-color: #007BFF !important;
 }
 
+.mat-mdc-raised-button.mat-primary {
+  background-color: #007BFF !important;
+  color: white !important;
+}
+
 .mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
 .mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
   color: #007BFF !important;

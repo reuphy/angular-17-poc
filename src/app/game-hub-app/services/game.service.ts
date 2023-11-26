@@ -61,6 +61,8 @@ export class GameService {
   }
 
   loadMoreGames() {
+    if (this.useMocks) { this.fakeGameService.loadMoreGames(); this.refreshGames() }
+
     return (this.httpService.getAll<FetchGamesData>(this.endPoint, '&page=' + ++this.page))
   }
 

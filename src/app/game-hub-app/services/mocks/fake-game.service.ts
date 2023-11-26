@@ -43,4 +43,8 @@ export class FakeGameService {
     this.games.results = games;
   }
 
+  loadMoreGames() {
+    this.games.results =  this.games.results.concat(gamesMockIndie.results as any);
+  }
+
 }
