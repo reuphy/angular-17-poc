@@ -10,10 +10,11 @@ export class GameService {
   useMocks = localStorage.getItem('mocks') === 'true';
   httpService = inject(HttpService)
   fakeGameService = inject(FakeGameService)
- 
+
   private endPoint = '/games'
   private query = ''
   private refreshGames$ = new Subject<void>();
+  params: { [key: string]: string | number } = {};
 
   getAll() {
     if (this.useMocks) return this.refreshGames$.pipe(switchMap(() => this.fakeGameService.getAll()))
@@ -21,22 +22,39 @@ export class GameService {
     return this.refreshGames$.pipe(switchMap(() => this.httpService.getAll<FetchGamesData>(this.endPoint, this.query)))
   }
 
-  getAllByGenre(genreId: number) {
-    if (this.useMocks) this.fakeGameService.getIndieGames();
+  setQuery(query: string, id: number | string) { 
+    this.params[query] = id
+    this.query = '&'+Object.keys(this.params).map(key => `${key}=${this.params[key]}`).join('&');
 
-    this.query =`&genres=${genreId}`;
     return this.refreshGames();
   }
 
-  getAllByPlatforms(platform:string) {
+  getAllByGenre(genreId: number) {
     if (this.useMocks) this.fakeGameService.getIndieGames();
-    
-    this.query = `&platforms=${platform}`;
-    return this.refreshGames();
+
+    this.setQuery('genres', genreId);
+  }
+
+  getAllByPlatforms(platform: string) {
+    if (this.useMocks) this.fakeGameService.getIndieGames();
+
+    this.setQuery('platforms', platform);
+  }
+
+  getAllByOrder(order: string) {
+    if (this.useMocks) this.fakeGameService.getIndieGames();
+
+    this.setQuery('ordering', order);
+  }
+
+  getAllByName(name: string) {
+    if (this.useMocks) this.fakeGameService.filterGameByname(name);
+
+    this.setQuery('search', name);
   }
 
   refreshGames() {
     this.refreshGames$.next();
   }
-  
+
 }

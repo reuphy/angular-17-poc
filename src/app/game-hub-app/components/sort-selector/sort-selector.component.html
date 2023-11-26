@@ -1,19 +1,17 @@
-sort selector
-<!-- <div style="margin-left: 2.5rem;">
+<div style="margin-left: 2.5rem;">
 
-    @if(platforms()?.isLoading) { <app-loading-text></app-loading-text> }
+    <!-- @if(platforms()?.isLoading) { <app-loading-text></app-loading-text> }
     @if(platforms()?.error) { <h3>{{platforms()?.error | json}}</h3> }
-    @if(platforms()?.value?.results?.length === 0) { <h3>No Genres found</h3> }
+    @if(platforms()?.value?.results?.length === 0) { <h3>No Genres found</h3> } -->
 
-    @if(!platforms()?.isLoading) { 
-        <mat-form-field>  
-            <mat-select [(value)]="selected">
-                @for(platform of platforms()?.value?.results; track $index) {
-                <mat-option (click)="filterByPlatform(platform)" value="{{platform.slug}}">
-                    {{platform.slug}}
-                </mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
-     }
-</div> -->
+    <mat-form-field>
+        <mat-label>Order by</mat-label>
+        <mat-select [(value)]="selected">
+            @for(sortOder of sortOrders; track $index) {
+            <mat-option (click)="filterBysortOder(sortOder.value)" value="{{sortOder.value}}">
+                {{sortOder.label}}
+            </mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+</div>

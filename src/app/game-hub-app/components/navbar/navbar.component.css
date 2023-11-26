@@ -1,10 +1,15 @@
 .logo {
-    height: 50px;
+    height: 65px;
+    align-self: stretch;
 }
 
 .nav-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: baseline;
+    width: 100%;
+}
+
+app-search-input {
     width: 100%;
 }

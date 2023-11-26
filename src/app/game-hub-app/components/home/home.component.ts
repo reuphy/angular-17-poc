@@ -14,5 +14,4 @@ import { GenreListComponent } from '../genre-list/genre-list.component';
 })
 export class HomeComponent {
   darkModeService = inject(DarkModeService);
-
 }

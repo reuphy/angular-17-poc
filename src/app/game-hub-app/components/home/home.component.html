@@ -1,5 +1,7 @@
-<app-navbar></app-navbar>
-<div [class]="darkModeService.darkModeClass()">
+<div style="padding-top:1rem;" [class]="darkModeService.darkModeClass()">
+    <div style="margin-top: 1rem;">
+        <app-navbar></app-navbar>
+    </div>
     <div class="container"> 
         <app-genre-list></app-genre-list>
         <app-game-grid></app-game-grid>

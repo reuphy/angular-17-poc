@@ -28,19 +28,14 @@ describe('ProductListComponent', () => {
       .then(() => {
         fixture.detectChanges();
         expect(component.products()?.isLoading).not.toBe(true);
-        // expect(fixture.nativeElement.textContent).not.toContain('Loading...');
       });
   }));
 
-  // it should show the products when they are loaded
   it('should show the products when they are loaded', waitForAsync(() => {
     fixture.whenStable()
       .then(() => {
         fixture.detectChanges();
         expect(component.products()?.value?.length).toBeGreaterThan(0);
       });
-
   }));
-
-
 });

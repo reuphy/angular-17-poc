@@ -6,9 +6,9 @@
 
     <div class="card-container">
         @if(games()?.isLoading) {
-        @for(n of [1,2,3,4,5,6,7,8,9,10]; track $index) {
-        <app-game-card-skeleton></app-game-card-skeleton>
-        }
+            @for(n of [1,2,3,4,5,6,7,8,9,10]; track $index) {
+            <app-game-card-skeleton></app-game-card-skeleton>
+            }
         }
 
         @if(games()?.error) { <h3>{{games()?.error | json}}</h3> }

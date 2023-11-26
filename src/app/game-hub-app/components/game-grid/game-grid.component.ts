@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { GameService } from '../../services/game.service';
@@ -10,7 +10,8 @@ import { SortSelectorComponent } from '../sort-selector/sort-selector.component'
 @Component({
   selector: 'app-game-grid',
   standalone: true,
-  imports: [CommonModule, GameCardComponent, GameCardSkeletonComponent, PlatformSelectorComponent, SortSelectorComponent],
+  imports: [CommonModule, GameCardComponent, GameCardSkeletonComponent, PlatformSelectorComponent,
+    SortSelectorComponent],
   templateUrl: './game-grid.component.html',
   styleUrl: './game-grid.component.css'
 })
@@ -21,7 +22,4 @@ export class GameGridComponent {
   ngOnInit() {
     this.gameService.refreshGames();
   }
-
-
-
 } 
