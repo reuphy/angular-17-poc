@@ -16,3 +16,8 @@ span.mdc-list-item__primary-text {
 .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
     color: var(--mat-option-selected-state-label-text-color);
 }
+
+button {
+  align-self: center;
+    margin: 1rem 0;
+}

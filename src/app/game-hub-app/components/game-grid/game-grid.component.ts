@@ -18,8 +18,16 @@ import { SortSelectorComponent } from '../sort-selector/sort-selector.component'
 export class GameGridComponent {
   private gameService = inject(GameService);
   games = toSignal(this.gameService.getAll())
+  moreGames = toSignal(this.gameService.loadMoreGames())
 
   ngOnInit() {
     this.gameService.refreshGames();
+  }
+
+  loadMore() {
+    (this.gameService.loadMoreGames())
+      .subscribe((games) => {
+        this.games()?.value?.results.push(...(games.value?.results || []))
+      })
   }
 } 

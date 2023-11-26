@@ -1,3 +1,4 @@
+import { toSignal } from '@angular/core/rxjs-interop';
 import { FetchGamesData } from '../interfaces/games';
 import { HttpService } from './http.service';
 import { Injectable, inject } from '@angular/core';
@@ -15,16 +16,18 @@ export class GameService {
   private query = ''
   private refreshGames$ = new Subject<void>();
   params: { [key: string]: string | number } = {};
+  page = 1;
 
   getAll() {
-    if (this.useMocks) return this.refreshGames$.pipe(switchMap(() => this.fakeGameService.getAll()))
-
+    if (this.useMocks) return this.refreshGames$.pipe(
+      switchMap(() => this.fakeGameService.getAll()),
+    )
     return this.refreshGames$.pipe(switchMap(() => this.httpService.getAll<FetchGamesData>(this.endPoint, this.query)))
   }
 
-  setQuery(query: string, id: number | string) { 
+  setQuery(query: string, id: number | string) {
     this.params[query] = id
-    this.query = '&'+Object.keys(this.params).map(key => `${key}=${this.params[key]}`).join('&');
+    this.query = '&' + Object.keys(this.params).map(key => `${key}=${this.params[key]}`).join('&');
 
     return this.refreshGames();
   }
@@ -55,6 +58,10 @@ export class GameService {
 
   refreshGames() {
     this.refreshGames$.next();
+  }
+
+  loadMoreGames() {
+    return (this.httpService.getAll<FetchGamesData>(this.endPoint, '&page=' + ++this.page))
   }
 
 }

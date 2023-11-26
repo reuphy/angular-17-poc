@@ -11,6 +11,7 @@ export class HttpService {
   private http = inject(HttpClient);
   private apiKey = '?key=' + '89dda7f3885d4946a0d9a012c391ae84';
   private endPoint = 'https://api.rawg.io/api'
+  
   getAll<T>(param:string, query:string = ''): Observable<HttpRequestState<T>> {
     const data = this.http.get<T>(this.endPoint + param + this.apiKey + query)
 
@@ -21,4 +22,5 @@ export class HttpService {
         startWith({ isLoading: true }),
       )
   }
+
 }
