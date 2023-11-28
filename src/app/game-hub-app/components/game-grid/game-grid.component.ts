@@ -6,7 +6,7 @@ import { GameCardComponent } from '../game-card/game-card.component';
 import { GameCardSkeletonComponent } from '../game-card-skeleton/game-card-skeleton.component';
 import { PlatformSelectorComponent } from '../platform-selector/platform-selector.component';
 import { SortSelectorComponent } from '../sort-selector/sort-selector.component';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-game-grid',
   standalone: true,
@@ -17,16 +17,14 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class GameGridComponent {
   private gameService = inject(GameService);
-  games = toSignal(this.gameService.getAll())
+  games = (this.gameService.games);  
 
   ngOnInit() {
     this.gameService.refreshGames();
   }
 
-  loadMore() { 
-    (this.gameService.loadMoreGames())
-      .subscribe((games) => {
-        this.games()?.value?.results.push(...(games.value?.results || []))
-      })
+  loadMore() {
+   this.gameService.loadMoreGames()
+
   }
 } 

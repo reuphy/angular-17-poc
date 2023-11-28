@@ -116,3 +116,5 @@ def of done is a commitment for the increment
 the must be a definition of done during the sprint planning event (but it s not mentionned in SCRUM guide)   
 def of done vs acceptance criteria : def done applies to every PBIS and the increment and created by scrum team + commitment for increment + is mandatory
 Ac : Applies to a signle PBI and created by PO + part of a PBI + is not mandatory but optional
+Scrum events are mandatory. All events are time box. events are designed for transparany and insepection
+Sprint names : sprint planning, daily scrum, sprint review

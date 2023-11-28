@@ -13,7 +13,6 @@ export class FakeGameService {
   games = gamesMock as FetchGamesData;
   // make a deep copy of the gamesMock so we can reset the games to the original list
   gamesMockCopy = JSON.parse(JSON.stringify(gamesMock));
-  
   genre = 0;
 
   getAll(): Observable<HttpRequestState<FetchGamesData>> {
@@ -23,7 +22,6 @@ export class FakeGameService {
         map((value) => ({ isLoading: false, value })),
         catchError(error => of({ isLoading: false, error })),
         startWith({ isLoading: true })
-        
       );
   }
 
@@ -35,7 +33,6 @@ export class FakeGameService {
   }
 
   filterGameByname(name: string) {
-    // filter game by name but reset the games to the original list if user deletes the search input
     this.games.results = this.gamesMockCopy.results;
 
     const games = this.games.results.filter(game => game.name.toLowerCase().includes(name.toLowerCase()));
@@ -44,7 +41,6 @@ export class FakeGameService {
   }
 
   loadMoreGames() {
-    this.games.results =  this.games.results.concat(gamesMockIndie.results as any);
+    this.games.results = this.games.results.concat(gamesMockIndie.results as any);
   }
-
 }

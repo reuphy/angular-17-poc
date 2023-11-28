@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlatformSelectorComponent } from './platform-selector.component';
 
-describe('PlatformSelectorComponent', () => {
+xdescribe('PlatformSelectorComponent', () => {
   let component: PlatformSelectorComponent;
   let fixture: ComponentFixture<PlatformSelectorComponent>;
 

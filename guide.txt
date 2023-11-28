@@ -37,3 +37,4 @@ stop 85
 *https://www.youtube.com/watch?v=93DOxts87U8
 combine latest : 5 minutes - 8m27 exemple de filtre dans un array
 //https://members.codewithmosh.com/courses/enrolled/2037633
+22) mosh 75
