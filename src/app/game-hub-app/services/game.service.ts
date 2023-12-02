@@ -3,7 +3,7 @@ import { FetchGamesData, Games } from '../interfaces/games';
 import { HttpService } from './http.service';
 import { Injectable, inject } from '@angular/core';
 import { FakeGameService } from './mocks/fake-game.service';
-import { BehaviorSubject, Subject, map, pairwise, scan, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Subject, filter, map, pairwise, scan, switchMap, tap } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,24 +13,21 @@ export class GameService {
   fakeGameService = inject(FakeGameService)
   private endPoint = '/games'
   private query = ''
-  private refreshGames$ = new BehaviorSubject<any>([]);
+  private refreshGames$ = new Subject<Games[]>();
   params: { [key: string]: string | number } = {};
   page = 1;
   games = toSignal(this.getAll())
-
-  getGames() {
-    return this.httpService.getAll<FetchGamesData>(this.endPoint, this.query)
-  }
 
   getAll() {
     if (this.useMocks) return this.refreshGames$.pipe(
       switchMap(() => this.fakeGameService.getAll()),
     )
 
-    return this.refreshGames$.pipe(switchMap(() => this.getGames()
+    return this.refreshGames$.pipe(switchMap((previousGameList) => this.httpService.getAll<FetchGamesData>(this.endPoint, this.query)
       .pipe(
         map(games => {
-          if (games.value?.results) games.value.results = [...this.refreshGames$.value, ...games.value.results]
+          
+          if (games.value?.results) games.value.results = [...previousGameList, ...games.value.results]
 
           return games;
         })
