@@ -1,3 +1,4 @@
+import { HomeComponent as LearnRxjs } from './learn-rxjs/home/home.component';
 import { Routes } from '@angular/router';
 import { AppointmentsListComponent } from './approintments-app/appointments-list/appointments-list.component';
 import { ReservationListComponent } from './reservations-app/reservation-list/reservation-list.component';
@@ -44,6 +45,10 @@ export const routes: Routes = [
     {
         path: 'game-hub',
         component: HomeComponent
+    },
+    {
+        path: 'learn-rxjs',
+        component: LearnRxjs
     },
 
     // {
