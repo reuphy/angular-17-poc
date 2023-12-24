@@ -1,7 +1,11 @@
 <div>
     @for(home of homes$ | async;track $index) {
-        <div data-test="home">
-        home1
+    <div data-test="home">
+        <span data-test="title">{{home.title}}</span>
+        <span data-test="location">{{home.location}}</span>
+        <span data-test="image">
+            <img [src]="home.image" [alt]="home.title" />
+        </span>
     </div>
     }
 </div>
