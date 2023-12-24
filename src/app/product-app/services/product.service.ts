@@ -57,6 +57,6 @@ export class ProductService {
   ]
 
   getProducts(): Observable<HttpRequestState<Product[]>> {
-    return asRequestState(of(this.products).pipe(delay(2000))) 
+    return asRequestState(of(this.products).pipe(delay(2000)))
   }
 }
