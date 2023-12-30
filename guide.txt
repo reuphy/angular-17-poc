@@ -38,3 +38,4 @@ stop 85
 combine latest : 5 minutes - 8m27 exemple de filtre dans un array
 //https://members.codewithmosh.com/courses/enrolled/2037633
 22) mosh 75
+23) https://stackoverflow.com/questions/66034837/usevalue-of-a-mockservice-in-jasmine-unit-test-causes-test-fail
